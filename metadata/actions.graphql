@@ -1,0 +1,31 @@
+type Mutation {
+  Login(
+    email: String!
+    password: String!
+  ): JsonWebToken
+}
+
+type Mutation {
+  Signup(
+    email: String!
+    password: String!
+    role_id: Int!
+  ): SignupOutput
+}
+
+type CreateUserOutput {
+  id: Int!
+  email: String!
+  password: String!
+}
+
+type JsonWebToken {
+  token: String!
+}
+
+type SignupOutput {
+  email: String
+  password: String
+  role_id: Int
+}
+

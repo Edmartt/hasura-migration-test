@@ -1,6 +1,19 @@
-actions: []
+actions:
+- name: Login
+  definition:
+    kind: synchronous
+    handler: http://host.docker.internal:5000/login
+  permissions:
+  - role: anonymous
+- name: Signup
+  definition:
+    kind: synchronous
+    handler: http://host.docker.internal:5000/signup
 custom_types:
   enums: []
   input_objects: []
-  objects: []
+  objects:
+  - name: CreateUserOutput
+  - name: JsonWebToken
+  - name: SignupOutput
   scalars: []
